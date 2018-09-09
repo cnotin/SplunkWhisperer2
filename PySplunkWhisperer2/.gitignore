@@ -1,0 +1,6 @@
+/dist
+/build
+/.idea
+/venv
+/*.spec
+/.vscode
