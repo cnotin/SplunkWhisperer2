@@ -1,7 +1,7 @@
 # SplunkWhisperer2
 ## Description
 Local privilege escalation, or remote code execution, through Splunk Universal Forwarder (UF) misconfigurations.
-See FIXME for more details.
+See https://clement.notin.org/blog/2019/02/25/Splunk-Universal-Forwarder-Hijacking-2-SplunkWhisperer2/ for more details.
 
 ## Which one to use?
 * You have a local shell on a Windows computer running Splunk UF?
