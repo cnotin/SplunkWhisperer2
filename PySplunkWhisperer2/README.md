@@ -7,8 +7,8 @@ I created two files to reduce dependencies (no HTTP server) when building the LP
     * `--port`, default=8089
     * `--username`, default="admin"
     * `--password`, default="changeme"
-    * `--payload`, default="calc.exe"
-    * `--payload-file`, default="pwn.bat"
+    * `--payload`, default="calc.exe", you must adapt for Linux targets
+    * `--payload-file`, default="pwn.bat", you must adapt for Linux targets
     The app bundle is created locally (temp file) and Splunk installs it from there.
 
 
@@ -20,8 +20,8 @@ I created two files to reduce dependencies (no HTTP server) when building the LP
     * `--lport`, default=8181
     * `--username`, default="admin"
     * `--password`, default="changeme" (**note**: this default password does not work remotely by default)
-    * `--payload`, default="calc.exe"
-    * `--payload-file`, default="pwn.bat"
+    * `--payload`, default="calc.exe", you must adapt for Linux targets
+    * `--payload-file`, default="pwn.bat", you must adapt for Linux targets
     The app bundle is created on your computer (temp file) and Splunk fetches it through HTTP (hence the need for `--lhost`).
 
 ## Supported platforms
