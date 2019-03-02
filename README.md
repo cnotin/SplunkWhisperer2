@@ -10,9 +10,9 @@ See https://clement.notin.org/blog/2019/02/25/Splunk-Universal-Forwarder-Hijacki
 * You can contact remotely the Splunk UF API (HTTPS port 8089 by default) and you have the credentials (**note**: the default credentials are *admin/changeme* but they do not work remotely by default)?
     * Use `PySplunkWhisperer2_remote`
 
-Note also that `SharpSplunkWhisperer2` relies on the [Splunk SDK for C#](http://dev.splunk.com/csharp) library, whereas `PySplunkWhisperer2` directly calls the [Splunk REST API](http://dev.splunk.com/restapi).
+`PySplunkWhisperer2` works fine on Linux targets too (adapt the payload file name and content accordingly).
 
-It works fine on Linux targets too (adapt the payload file name and content accordingly).
+Note also that `SharpSplunkWhisperer2` relies on the [Splunk SDK for C#](http://dev.splunk.com/csharp) library, whereas `PySplunkWhisperer2` directly calls the [Splunk REST API](http://dev.splunk.com/restapi).
 
 ### Credits
 These tools are inspired by [the original Splunk Whisperer](https://github.com/airman604/splunk_whisperer) by @airman604.
