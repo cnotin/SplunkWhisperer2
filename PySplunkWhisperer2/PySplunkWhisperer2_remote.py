@@ -85,7 +85,7 @@ class ThreadedHTTPServer(object):
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--scheme', default="https")
-parser.add_argument('--host', default="localhost")
+parser.add_argument('--host', required=True)
 parser.add_argument('--port', default=8089)
 parser.add_argument('--lhost', required=True)
 parser.add_argument('--lport', default=8181)
