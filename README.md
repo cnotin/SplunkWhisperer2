@@ -12,6 +12,8 @@ See https://clement.notin.org/blog/2019/02/25/Splunk-Universal-Forwarder-Hijacki
 
 Note also that `SharpSplunkWhisperer2` relies on the [Splunk SDK for C#](http://dev.splunk.com/csharp) library, whereas `PySplunkWhisperer2` directly calls the [Splunk REST API](http://dev.splunk.com/restapi).
 
+It works fine on Linux targets too (adapt the payload file name and content accordingly).
+
 ### Credits
 These tools are inspired by [the original Splunk Whisperer](https://github.com/airman604/splunk_whisperer) by @airman604.
 
