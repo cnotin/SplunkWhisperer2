@@ -12,10 +12,11 @@ I created two files to reduce dependencies (no HTTP server) when building the LP
     The app bundle is created locally (temp file) and Splunk installs it from there.
 
 
-* Remote Code Execution (RCE): the Universal Forwarder is exposed, then use `PySplunkWhisperer2_remote.py`. The following arguments exist. They are all optional, except `--lport`:
+* Remote Code Execution (RCE): the Universal Forwarder is exposed, then use `PySplunkWhisperer2_remote.py`. The following arguments exist. They are all optional, except `--host` and `--lhost`:
     * `--scheme`, default="https"
+    * `--host`, **required=True**, this is your target
     * `--port`, default=8089
-    * `--lhost`, **required=True**
+    * `--lhost`, **required=True**, this is your own IP
     * `--lport`, default=8181
     * `--username`, default="admin"
     * `--password`, default="changeme" (**note**: this default password does not work remotely by default)
