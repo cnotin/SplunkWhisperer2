@@ -6,7 +6,7 @@ This tool requires at least .NET 4.5 (which isn't available by default on Window
 I do not publish binaries on purpose. You have to build it yourself, for example with Visual Studio 2017 Community. The required packages are fetched by NuGet.
 
 ## Usage
-`SharpSplunkWhisperer2` only implements Local Privilege Escalation (LPE) mode. For Remote Code Execution (RCE),  see `PySplunkWhisperer2` in the same repository.
+`SharpSplunkWhisperer2` only implements Local Privilege Escalation (LPE) mode for Windows targets. For Remote Code Execution (RCE),  and Linux targets, see `PySplunkWhisperer2` in the same repository.
 
 The following arguments exist but are optional:
 * `--UserName`, default="admin"
